@@ -2,6 +2,9 @@
 " Vim's global configuration
 "
 
+" Load plugins
+source ~/.vim/plugins.vimrc
+
 " Enable filetype alugins
 filetype on
 filetype plugin on
@@ -75,8 +78,8 @@ syntax on
 
 " Set colorscheme
 set t_Co=256
-" set background=light
-" colorscheme apprentice
+set background=dark
+colorscheme despacio
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -103,9 +106,6 @@ set nowrap
 
 " Show the current mode
 set showmode
-
-" Always show the status line
-" set laststatus=2
 
 " This is the timeout used while waiting for user input on a multi-keyed macro
 " or while just sitting and waiting for another key to be pressed measured
@@ -235,3 +235,4 @@ nmap <F4> :lvimgrep<space>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
+

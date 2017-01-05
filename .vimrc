@@ -1,4 +1,6 @@
 "
+"autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+"
 " Vim's global configuration
 "
 
@@ -69,6 +71,7 @@ set completeopt=longest,menuone
 
 " Omni completion provides smart autocompletion for programs
 set omnifunc=syntaxcomplete#Complete
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite

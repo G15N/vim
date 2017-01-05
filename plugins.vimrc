@@ -13,6 +13,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'powerline/fonts'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'StanAngeloff/php.vim'
 call plug#end()
 
 " Airline configuration
@@ -36,3 +39,9 @@ let g:syntastic_check_on_wq = 0
 
 " Tagbar configuration
 nmap <F8> :TagbarToggle<CR>
+
+" Ctrlp configuration
+let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
+let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|srv)$'
+

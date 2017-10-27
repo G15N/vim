@@ -82,7 +82,7 @@ syntax on
 " Set colorscheme
 set t_Co=256
 set background=dark
-colorscheme despacio
+colorscheme pablo
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

@@ -5,7 +5,7 @@
 "
 
 " Load plugins
-source ~/.vim/plugins.vimrc
+:silent! source ~/.vim/plugins.vimrc
 
 " Enable filetype alugins
 filetype on

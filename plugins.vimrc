@@ -5,6 +5,7 @@
 " Load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'aklt/plantuml-syntax'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -37,10 +38,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_sh_shellcheck_args = "-x"
 
 " Ctrlp configuration
-let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|srv)$'
 
 " Vim-better-whitespace configuration
 let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
+let g:strip_whitelines_at_eof = 1
+let g:show_spaces_that_precede_tabs = 1

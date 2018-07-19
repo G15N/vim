@@ -71,7 +71,7 @@ set completeopt=longest,menuone
 
 " Omni completion provides smart autocompletion for programs
 set omnifunc=syntaxcomplete#Complete
-autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
+au FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite
@@ -165,7 +165,7 @@ set foldmethod=manual
 
 " Spelling
 set spelllang=fr
-autocmd BufEnter *.txt, *.feature set spell
+au BufEnter *.{txt,md,feature} set spell
 
 " Bubble single lines
 nmap <C-K> ddkP
@@ -238,6 +238,9 @@ nmap <F3> :vimgrep<space>
 
 " Local vimgrep
 nmap <F4> :lvimgrep<space>
+
+" Xml linter
+nmap <F5> :silent %!xmllint --format --recover - 2>/dev/null<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)

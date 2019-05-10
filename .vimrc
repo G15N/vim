@@ -1,6 +1,4 @@
 "
-"autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-"
 " Vim's global configuration
 "
 
@@ -69,10 +67,6 @@ set complete=.,w,b,t
 " Set completion popup menu works as in IDEs
 set completeopt=longest,menuone
 
-" Omni completion provides smart autocompletion for programs
-set omnifunc=syntaxcomplete#Complete
-au FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite
 
@@ -82,7 +76,7 @@ syntax on
 " Set colorscheme
 set t_Co=256
 set background=dark
-colorscheme pablo
+colorscheme iceberg
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

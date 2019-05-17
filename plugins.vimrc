@@ -10,17 +10,19 @@ Plug 'cocopon/iceberg.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'mhinz/vim-startify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'powerline/fonts'
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
+Plug 'w0rp/ale'
 call plug#end()
 
 " Airline configuration
@@ -51,3 +53,6 @@ let g:better_whitespace_enabled = 1
 let g:strip_whitespace_on_save = 1
 let g:strip_whitelines_at_eof = 1
 let g:show_spaces_that_precede_tabs = 1
+
+"
+map <C-n> :NERDTreeToggle<CR>

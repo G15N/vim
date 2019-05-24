@@ -9,6 +9,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'cocopon/iceberg.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'justinmk/vim-sneak'
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 Plug 'mhinz/vim-startify'
 Plug 'ntpeters/vim-better-whitespace'
@@ -54,5 +55,15 @@ let g:strip_whitespace_on_save = 1
 let g:strip_whitelines_at_eof = 1
 let g:show_spaces_that_precede_tabs = 1
 
-"
+" NERDTree mappings
 map <C-n> :NERDTreeToggle<CR>
+
+" Sneak mappings
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
+
+"
+let g:ale_php_phpcs_executable="vendor/bin/phpcs"
+let g:ale_php_phpcs_standard="phpcs.xml"

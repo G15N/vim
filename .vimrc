@@ -163,10 +163,6 @@ set spelllang=fr
 " Uses the * register, aka primary selection.
 set clipboard+=unnamed
 
-" Yaml stuff
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 " Bubble single lines
 nmap <C-K> ddkP
 nmap <C-J> ddp
@@ -233,17 +229,8 @@ nmap <leader>p :cp<cr>
 " Show invisible
 nmap <leader>i :set list!<cr>
 
-" Global vimgrep
-nmap <F3> :vimgrep<space>
-
-" Local vimgrep
-nmap <F4> :lvimgrep<space>
-
-" Xml linter
-nmap <F5> :silent %!xmllint --format --recover - 2>/dev/null<cr>
-
-" Spelling
-nmap <F6> :set spell<cr>
+" terminal emulation
+nnoremap <silent> <leader>sh :terminal<CR>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)

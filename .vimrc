@@ -76,7 +76,7 @@ syntax on
 " Set colorscheme
 set t_Co=256
 set background=dark
-colorscheme iceberg
+colorscheme gruvbox
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

@@ -1,11 +1,11 @@
 "
-" Vim's global configuration
+" Global vim configuration
 "
 
 " Load plugins
 :silent! source ~/.vim/plugins.vimrc
 
-" Enable filetype alugins
+" Enable filetype plugins
 filetype on
 filetype plugin on
 filetype indent on
@@ -43,7 +43,7 @@ set ignorecase
 " Allow backspacing over indent, eol, and the start of an insert
 set backspace=2
 
-" Highlight search results
+" Disable highlighting search results
 set nohlsearch
 
 " Makes search act like search in modern browsers
@@ -70,7 +70,10 @@ set completeopt=longest,menuone
 " Add ignorance of whitespace to diff
 set diffopt+=iwhite
 
-" Switch on syntax highlighting.
+" Show invisibles as character
+set list
+
+" Switch on syntax highlighting
 syntax on
 
 " Set colorscheme
@@ -78,7 +81,7 @@ set t_Co=256
 set background=dark
 colorscheme gruvbox
 
-" Set utf8 as standard encoding and en_US as the standard language
+" Set UTF8 as standard encoding
 set encoding=utf8
 
 " Use Unix as the standard file type
@@ -98,7 +101,7 @@ set tabstop=4
 set lbr
 set tw=500
 
-" Wrap lines
+" Do not Wrap lines by default
 set nowrap
 
 " Show the current mode
@@ -109,10 +112,7 @@ set showmode
 " in milliseconds.
 set timeoutlen=500
 
-" These commands open folds
-set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
-
-" Navigate with mouse
+" Enable mouse
 set mouse=a
 
 " Highlight the current line and column
@@ -127,8 +127,8 @@ set listchars=tab:▸\ ,eol:¬
 set autoindent
 set copyindent
 
-" Never ever let Vim write a backup file! They did that in the 70’s.
-" Use modern ways for tracking your changes, for God’s sake.
+" > Never ever let Vim write a backup file! They did that in the 70’s.
+" > Use modern ways for tracking your changes, for God’s sake.
 set nobackup
 set nowritebackup
 set noswapfile
@@ -145,13 +145,10 @@ set diffopt+=iwhite
 " Set wimdiff to ignore case
 set diffopt+=icase
 
-" Tags file
-set tags=tags;
-
 " System default for mappings is now the "," character
 let mapleader = ","
 
-" temporarily switch to paste mode
+" Mapping to switch to paste mode
 set pastetoggle=<F2>
 
 " Define foldmethod to manuel
@@ -160,7 +157,7 @@ set foldmethod=manual
 " Spelling
 set spelllang=fr
 
-" Uses the * register, aka primary selection.
+" Uses the * register, aka primary selection
 set clipboard+=unnamed
 
 " Bubble single lines
@@ -198,18 +195,17 @@ nmap <leader><cr> :set hls!<cr>
 " Activate relative line number (buggy before 7.4)
 nmap <leader>rn :set relativenumber<cr>
 
-" set text wrapping toggles
+" Set text wrapping toggles
 nmap <leader>ww :set invwrap<cr>:set wrap?<cr>
 
 " Useful mappings for managing tabs
-nmap <leader>tn :tabnew<cr>
+nmap <leader>tnew :tabnew<cr>
 nmap <leader>to :tabonly<cr>
-nmap <leader>tc :tabclose<cr>
-nmap <leader>tm :tabmove
+nmap <leader>tclose :tabclose<cr>
+nmap <leader>tm :tabmove<cr>
+nmap <leader>tp :tabprevious<cr>
+nmap <leader>tn :tabnext<cr>
 nmap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-" Search a file recursively in PWD
-nmap <leader>e :e **/*
 
 " Display results in cope
 nmap <leader>c :cw<cr>
@@ -229,8 +225,8 @@ nmap <leader>p :cp<cr>
 " Show invisible
 nmap <leader>i :set list!<cr>
 
-" terminal emulation
-nnoremap <silent> <leader>sh :terminal<CR>
+" Create a new terminal emulator
+nmap <silent> <leader>sh :terminal<CR>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)

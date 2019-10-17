@@ -2,9 +2,6 @@
 " Global vim configuration
 "
 
-" Load plugins
-:silent! source ~/.vim/plugins.vimrc
-
 " Enable filetype plugins
 filetype on
 filetype plugin on
@@ -79,7 +76,6 @@ syntax on
 " Set colorscheme
 set t_Co=256
 set background=dark
-colorscheme gruvbox
 
 " Set UTF8 as standard encoding
 set encoding=utf8
@@ -231,3 +227,6 @@ nmap <silent> <leader>sh :terminal<CR>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
+
+" Load plugins
+:silent! source ~/.vim/plugins.vimrc

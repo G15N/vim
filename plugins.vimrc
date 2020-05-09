@@ -6,9 +6,9 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'cocopon/iceberg.vim'
 Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
-Plug 'morhetz/gruvbox'
 Plug 'powerline/fonts'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -36,7 +36,7 @@ let g:ale_fixers = {
 
 " Airline
 set laststatus=2
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'iceberg'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -57,11 +57,10 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git'
 
-" GruvBox
-let g:gruvbox_italic=1
-set t_Co=256
-set background=dark
-colorscheme gruvbox
+" Iceberg
+" set t_Co=256
+" set background=dark
+colorscheme iceberg
 
 " Vim-GitGutter
 set signcolumn=yes

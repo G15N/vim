@@ -200,6 +200,10 @@ nmap <leader>rn :set relativenumber<cr>
 " Set text wrapping toggles
 nmap <leader>ww :set invwrap<cr>:set wrap?<cr>
 
+" Useful mapping for managing buffers
+nmap <leader>bn :bn<cr>
+nmap <leader>bp :bp<cr>
+
 " Useful mappings for managing tabs
 nmap <leader>tnew :tabnew<cr>
 nmap <leader>to :tabonly<cr>
@@ -228,7 +232,7 @@ nmap <leader>p :cp<cr>
 nmap <leader>i :set list!<cr>
 
 " Create a new terminal emulator
-nmap <silent> <leader>sh :terminal<CR>
+nmap <leader>sh :terminal<CR>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)

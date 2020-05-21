@@ -5,24 +5,35 @@
 " Load plugins
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'cocopon/iceberg.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 Plug 'powerline/fonts'
+Plug 'preservim/nerdtree'
+Plug 'qpkorr/vim-bufkill'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
-Plug 'vim-scripts/grep.vim'
+Plug 'ronakg/quickr-preview.vim'
 call plug#end()
 
 "
 " Plugins configuration
 "
+
+" Ack
+nmap <silent> <C-f> :Ack! "\b<cword>\b"<cr>
 
 " ALE
 let g:ale_completion_enabled = 1
@@ -32,7 +43,9 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \}
-
+let g:ale_linters = {
+\   'go': ['gopls'],
+\}
 
 " Airline
 set laststatus=2
@@ -44,18 +57,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
-" Ctrlp
-let g:ctrlp_working_path_mode = 'c'
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
-let g:ctrlp_custom_ignore = '\v[\/]\.?(git|hg|svn|srv)$'
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
+" bufkill
+map <leader>w :BD<cr>
 
-" Grep.vim
-nmap <silent> <leader>f :Rgrep<CR>
-let Grep_Default_Options = '-IR'
-let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git'
+" fzf
+nmap <C-g><C-f> :Files<cr>
+nmap <C-g><C-t> :Tags<cr>
+nmap <C-g><C-b> :Buffers<cr>
 
 " Iceberg
 " set t_Co=256
@@ -64,3 +72,12 @@ colorscheme iceberg
 
 " Vim-GitGutter
 set signcolumn=yes
+
+" Vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_fmt_command='goimports'
+
+" Quickr Preview
+nmap <leader><space> <plug>(quickr_preview)
+let g:quickr_preview_position = 'bottom'

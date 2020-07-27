@@ -1,4 +1,3 @@
-"
 " Vim plugins configuration
 "
 
@@ -6,16 +5,18 @@
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'cocopon/iceberg.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-Plug 'powerline/fonts'
+Plug 'ncm2/ncm2'
+Plug 'phpactor/ncm2-phpactor'
+Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
 Plug 'preservim/nerdtree'
 Plug 'qpkorr/vim-bufkill'
+Plug 'ronakg/quickr-preview.vim'
+Plug 'roxma/nvim-yarp'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -25,15 +26,11 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
-Plug 'ronakg/quickr-preview.vim'
 call plug#end()
 
 "
 " Plugins configuration
 "
-
-" Ack
-nmap <silent> <C-f> :Ack! "\b<cword>\b"<cr>
 
 " ALE
 let g:ale_completion_enabled = 1
@@ -61,14 +58,35 @@ let g:airline_skip_empty_sections = 1
 map <leader>w :BD<cr>
 
 " fzf
-nmap <C-g><C-f> :Files<cr>
-nmap <C-g><C-t> :Tags<cr>
-nmap <C-g><C-b> :Buffers<cr>
+nmap <C-p> :Files<cr>
+nmap <C-t> :Tags<cr>
+nmap <C-b> :Buffers<cr>
+nmap <leader>f :Rg<space>
+nmap <leader>F :exec "Rg ".expand("<cword>")<cr>
 
 " Iceberg
-" set t_Co=256
-" set background=dark
 colorscheme iceberg
+
+" Phpactor mapping
+au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
+au FileType php nmap <buffer> <Leader>e :PhpactorClassExpand<CR>
+au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
+au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
+au FileType php nmap <buffer> <Leader>nn :PhpactorNavigate<CR>
+au FileType php,cucumber nmap <buffer> <Leader>o :PhpactorGotoDefinition<CR>
+au FileType php,cucumber nmap <buffer> <Leader>Oh :PhpactorGotoDefinitionHsplit<CR>
+au FileType php,cucumber nmap <buffer> <Leader>Ov :PhpactorGotoDefinitionVsplit<CR>
+au FileType php,cucumber nmap <buffer> <Leader>Ot :PhpactorGotoDefinitionTab<CR>
+au FileType php nmap <buffer> <Leader>K :PhpactorHover<CR>
+au FileType php nmap <buffer> <Leader>tt :PhpactorTransform<CR>
+au FileType php nmap <buffer> <Leader>cc :PhpactorClassNew<CR>
+au FileType php nmap <buffer> <Leader>ci :PhpactorClassInflect<CR>
+au FileType php nmap <buffer> <Leader>fr :PhpactorFindReferences<CR>
+au FileType php nmap <buffer> <Leader>mf :PhpactorMoveFile<CR>
+au FileType php nmap <buffer> <Leader>cf :PhpactorCopyFile<CR>
+au FileType php nmap <buffer> <silent> <Leader>ee :PhpactorExtractExpression<CR>
+au FileType php vmap <buffer> <silent> <Leader>ee :<C-u>PhpactorExtractExpression<CR>
+au FileType php vmap <buffer> <silent> <Leader>em :<C-u>PhpactorExtractMethod<CR>
 
 " Vim-GitGutter
 set signcolumn=yes

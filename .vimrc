@@ -162,6 +162,9 @@ set spelllang=fr
 " Uses the * register, aka primary selection
 set clipboard+=unnamed
 
+" Writes the content of the file automatically if you call :make
+set autowrite
+
 " Bubble single lines
 nmap <C-K> ddkP
 nmap <C-J> ddp

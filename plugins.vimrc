@@ -40,22 +40,16 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
 \}
-let g:ale_linters = {
-\   'go': ['gopls'],
-\}
 
 " Airline
 set laststatus=2
-let g:airline_theme = 'iceberg'
+let g:airline_theme = 'lessnoise'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
-
-" bufkill
-map <leader>w :BD<cr>
 
 " fzf
 nmap <C-p> :Files<cr>
@@ -64,8 +58,10 @@ nmap <C-b> :Buffers<cr>
 nmap <leader>f :Rg<space>
 nmap <leader>F :exec "Rg ".expand("<cword>")<cr>
 
-" Iceberg
-colorscheme iceberg
+" Colorscheme
+colorscheme molokai
+let g:rehash256 = 1
+let g:molokai_original = 1
 
 " Phpactor mapping
 au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
@@ -95,6 +91,23 @@ set signcolumn=yes
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_command='goimports'
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+au BufNewFile,BufRead *.go setlocal noexpandtab tabstop=8 shiftwidth=8
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 " Quickr Preview
 nmap <leader><space> <plug>(quickr_preview)

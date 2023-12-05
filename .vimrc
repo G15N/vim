@@ -73,11 +73,6 @@ set list
 " Switch on syntax highlighting
 syntax on
 
-" Set colorscheme
-set t_Co=256
-set background=dark
-set termguicolors
-
 " This is only necessary if you use "set termguicolors".
 " fixes glitch? in colors when using vim with tmux
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

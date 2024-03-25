@@ -160,6 +160,9 @@ set clipboard+=unnamed
 " Writes the content of the file automatically if you call :make
 set autowrite
 
+" Set colorscheme
+colorscheme default
+
 " Bubble single lines
 nmap <C-K> ddkP
 nmap <C-J> ddp

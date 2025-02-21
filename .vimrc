@@ -161,6 +161,9 @@ set clipboard+=unnamed
 set autowrite
 
 " Set colorscheme
+set t_Co=256
+set background=dark
+set termguicolors
 colorscheme default
 
 " Bubble single lines

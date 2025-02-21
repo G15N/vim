@@ -25,6 +25,13 @@ call plug#end()
 " Plugins configuration
 "
 
+" Airline
+let g:airline_theme = 'base16_black_metal'
+let g:airline_powerline_fonts = 1
+
+" Base16 Colorscheme
+colorscheme base16-black-metal
+
 " ALE
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
@@ -34,12 +41,8 @@ let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \}
 
-" Airline
-let g:airline_theme = 'simple'
-let g:airline_powerline_fonts = 1
-
 " fzf
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+#let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 nmap <C-p> :Files<cr>
 nmap <C-t> :Tags<cr>
 nmap <C-b> :Buffers<cr>

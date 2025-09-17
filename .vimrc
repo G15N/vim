@@ -165,6 +165,10 @@ set t_Co=256
 set background=dark
 set termguicolors
 colorscheme default
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
 
 " Bubble single lines
 nmap <C-K> ddkP

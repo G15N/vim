@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'dense-analysis/ale'
 Plug 'edkolev/tmuxline.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'svermeulen/vim-subversive'
@@ -26,11 +27,15 @@ call plug#end()
 "
 
 " Airline
-let g:airline_theme = 'base16_black_metal'
+let g:airline_theme = 'base16_default_dark'
 let g:airline_powerline_fonts = 1
 
 " Base16 Colorscheme
-colorscheme base16-black-metal
+colorscheme base16-default-dark
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
 
 " ALE
 let g:ale_completion_enabled = 1

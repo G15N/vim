@@ -45,6 +45,10 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
+\   'go': ['gofmt', 'goimports'],
+\}
+let g:ale_linters = {
+\   'go': ['gopls', 'gofmt'],
 \}
 
 " fzf
@@ -54,3 +58,6 @@ nmap <C-t> :Tags<cr>
 nmap <C-b> :Buffers<cr>
 nmap <leader>f :Rg<space>
 nmap <leader>F :exec "Rg ".expand("<cword>")<cr>
+
+" Load Go-specific configuration
+:silent! source ~/.vim/go.vimrc

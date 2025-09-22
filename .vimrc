@@ -80,6 +80,8 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Set UTF8 as standard encoding
 set encoding=utf8
+set termencoding=utf8
+set fileencoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac

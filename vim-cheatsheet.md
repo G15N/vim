@@ -136,12 +136,36 @@ This cheat sheet contains the most useful key combinations configured in your `.
 | `:ALENext`      | Next issue | Go to next linting issue |
 | `:ALEPrevious`  | Previous issue | Go to previous linting issue |
 
-### vim-go
+### vim-go (Go Development)
 | Key Combination | Action | Description |
 |:---------------:|--------|-------------|
+| **Navigation & Definition** | | |
+| `,gd`           | `:GoDef` | **Go to definition** |
+| `,gdv`          | `:GoDefVertical` | Go to definition (vertical split) |
+| `,gds`          | `:GoDefSplit` | Go to definition (horizontal split) |
+| `,gD`           | `:GoDecls` | **Browse declarations in file** |
+| `,gDD`          | `:GoDeclsDir` | Browse declarations in directory |
+| **Documentation & Info** | | |
+| `,gdoc`         | `:GoDoc` | Show documentation |
+| `,gdocv`        | `:GoDocVertical` | Show documentation (vertical) |
+| `,gi`           | `:GoInfo` | **Show type information** |
+| **Interface Implementation** | | |
+| `,gim`          | `:GoImplements` | **Show interface implementations** |
+| `,gii`          | `:GoDescribe` | Show what interfaces type implements |
+| `,gen`          | `:GoImpl` | Generate interface method stubs |
+| **Code Navigation** | | |
+| `,grf`          | `:GoReferrers` | **Find references/usage** |
+| `,gc`           | `:GoCallers` | Find callers of function |
+| `,gce`          | `:GoCallees` | Find callees of function |
+| `,gr`           | `:GoRename` | Rename identifier |
+| `]]`            | Go def stack | Navigate definition stack |
+| `[[`            | Clear def stack | Clear definition stack |
+| **Build & Test** | | |
+| `,gb`           | `:GoBuild` | **Build Go project** |
+| `,gt`           | `:GoTest` | Run all tests |
+| `,gtf`          | `:GoTestFunc` | Run test for current function |
+| **Legacy Commands** | | |
 | `:GoRun`        | Run Go program | Execute current Go file |
-| `:GoBuild`      | Build Go program | Build current Go project |
-| `:GoTest`       | Run tests | Run Go tests |
 | `:GoCoverage`   | Show coverage | Display test coverage |
 
 ---

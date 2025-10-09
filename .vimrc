@@ -73,6 +73,15 @@ set list
 " Switch on syntax highlighting
 syntax on
 
+" Increase synmaxcol for long lines
+set synmaxcol=3000
+
+" Fix syntax highlighting in markdown files
+autocmd BufEnter *.md syntax sync fromstart
+
+" Enable line wrapping for markdown files
+autocmd FileType markdown setlocal wrap
+
 " This is only necessary if you use "set termguicolors".
 " fixes glitch? in colors when using vim with tmux
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

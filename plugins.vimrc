@@ -11,7 +11,7 @@ Plug 'edkolev/tmuxline.vim'                          " Tmux statusline generator
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go development | :GoDef, :GoDoc, :GoRun
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder
 Plug 'junegunn/fzf.vim'                              " FZF vim integration | Ctrl-p, Ctrl-t, Ctrl-b
-Plug 'preservim/vim-markdown'                        " Markdown syntax & features | ge (follow link)
+Plug 'tpope/vim-markdown'                            " Markdown syntax & features
 Plug 'svermeulen/vim-subversive'                     " Substitute operator | s motion
 Plug 'tpope/vim-commentary'                          " Comment code | gc motion, gcc line
 Plug 'tpope/vim-eunuch'                              " Unix commands | :Delete, :Move, :Rename, :Chmod
@@ -40,31 +40,18 @@ hi LineNr guibg=NONE ctermbg=NONE        " Transparent line numbers
 hi SignColumn guibg=NONE ctermbg=NONE    " Transparent sign column
 
 " ALE - Async linting and fixing
-let g:ale_completion_enabled = 1                         " Enable completion
-set omnifunc=ale#completion#OmniFunc                     " Set omni completion function
-let g:ale_fix_on_save = 1                                " Auto-fix files on save
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],  " Apply to all files
-\   'javascript': ['prettier', 'eslint'],                " JS formatting
-\   'go': ['gofmt', 'goimports'],                        " Go formatting
-\   'markdown': ['prettier'],                            " Markdown formatting
-\}
-let g:ale_linters = {
-\   'go': ['gopls', 'gofmt'],                            " Go linting
-\}
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['prettier', 'eslint'], 'go': ['gofmt', 'goimports'], 'markdown': ['prettier']}
+let g:ale_linters = {'go': ['gopls', 'gofmt'], 'markdown': ['markdownlint']}
 
 " vim-markdown - Markdown syntax and features
-let g:vim_markdown_folding_disabled = 1       " Disable section folding
-let g:vim_markdown_frontmatter = 1            " Highlight YAML frontmatter
-let g:vim_markdown_toml_frontmatter = 1       " Highlight TOML frontmatter
-let g:vim_markdown_json_frontmatter = 1       " Highlight JSON frontmatter
-let g:vim_markdown_follow_anchor = 1          " Follow anchors with ge
-let g:vim_markdown_conceal = 1                " Don't hide syntax chars (*, _, etc)
-let g:vim_markdown_conceal_code_blocks = 0    " Don't conceal code blocks
-let g:vim_markdown_strikethrough = 1          " Enable ~~strikethrough~~ syntax
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript', 'go', 'json', 'yaml', 'sql']
+let g:markdown_syntax_conceal = 0             " Don't hide syntax chars
 
 " fzf - Fuzzy finder shortcuts
-#let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+"let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 nmap <C-p> :Files<cr>                           " Ctrl-p: Find files
 nmap <C-t> :Tags<cr>                            " Ctrl-t: Find tags
 nmap <C-b> :Buffers<cr>                         " Ctrl-b: List buffers
